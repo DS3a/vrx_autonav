@@ -1,0 +1,12 @@
+<launch>
+
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_odom_node_local" clear_params="false">
+    <rosparam command="load" file="$(find vrx_sensor_fusion)/config/local_ekf.yaml" />
+
+    <remap from="odometry/filtered" to="/odometry/filtered/local"/>
+    <!--  Placeholder for output topic remapping
+    <remap from="accel/filtered" to=""/>
+    -->
+
+  </node>
+</launch>

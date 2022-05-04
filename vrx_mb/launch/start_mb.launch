@@ -1,0 +1,24 @@
+<launch>
+  <arg name="no_static_map" default="true"/>
+  
+  <!-- Run the map server -->
+  <arg name="map_file" default="$(find vrx_mb)/maps/empty.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <arg name="base_global_planner" default="navfn/NavfnROS"/>
+  <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS"/>
+  <!-- <arg name="base_local_planner" default="teb_local_planner/TebLocalPlannerROS"/> -->
+  <!-- <arg name="base_local_planner" default="base_local_planner/TrajectoryPlannerROS"/> -->
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+
+    <param name="base_global_planner" value="$(arg base_global_planner)"/>
+    <param name="base_local_planner" value="$(arg base_local_planner)"/>  
+    <rosparam file="$(find vrx_mb)/config/planner.yaml" command="load"/>
+    <!-- <rosparam file="$(find vrx_mb)/config/teb_local_planner_params.yaml" command="load"/> -->
+
+    <rosparam file="$(find vrx_mb)/config/local_costmap.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find vrx_mb)/config/global_costmap.yaml" command="load" ns="global_costmap" if="$(arg no_static_map)"/>
+
+  </node>
+</launch>
