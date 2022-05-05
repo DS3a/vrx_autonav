@@ -6,8 +6,8 @@ footprint_padding: 0.01
 global_frame: odom
 robot_base_frame: wamv/base_link
 publish_frequency: 5.0
-width: 20
-height: 20
+width: 50
+height: 50
 origin_x: -10
 origin_y: -10
 update_frequency: 10
