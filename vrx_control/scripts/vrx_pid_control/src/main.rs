@@ -43,8 +43,6 @@ fn main() {
 
         *r += PROPELLER_SEPARATION * 0.5 * req_angular_vel;
         *l -= PROPELLER_SEPARATION * 0.5 * req_angular_vel;
-
-        dbg!(&r);
     }).unwrap();
 
     let odom_subscriber = rosrust::subscribe("/odometry/filtered/local", 100, move |msg: nav_msgs::Odometry| {
@@ -80,7 +78,6 @@ fn main() {
             let mut l = rlv_counter.lock().unwrap();
             let mut r = rrv_counter.lock().unwrap();
     
-    
             let mut right_msg = std_msgs::Float64::default();
             right_msg.data = *r;
             right_setpoint_publisher.send(right_msg).unwrap();
@@ -88,15 +85,14 @@ fn main() {
             let mut left_msg = std_msgs::Float64::default();
             left_msg.data = *l;
             left_setpoint_publisher.send(left_msg).unwrap();
-            
             let rr = (*r).clone();
             let ll = (*l).clone();
 
             *r -= rr*SETPOINT_DEGRADATION;
             *l -= ll*SETPOINT_DEGRADATION;
 
-            dbg!(r);
-            dbg!(l);
+            std::mem::drop(r);
+            std::mem::drop(l);
             rate.sleep();    
         }
     });
