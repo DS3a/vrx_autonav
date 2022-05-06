@@ -2,10 +2,12 @@ controller_frequency: 1
 recovery_behaviour_enabled: true
 
 NavfnROS:
-  allow_unknown: false # Specifies whether or not to allow navfn to create plans that traverse unknown space.
+  allow_unknown: true # Specifies whether or not to allow navfn to create plans that traverse unknown space.
   default_tolerance: 0.44 # A tolerance on the goal point for the planner.
 
+
 DWAPlannerROS:
+  allow_unknown: true
   # Robot configuration parameters  
   acc_lim_x: 0.5
   acc_lim_y: 0
