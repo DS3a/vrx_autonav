@@ -1,9 +1,9 @@
-controller_frequency: 5.0
+controller_frequency: 1
 recovery_behaviour_enabled: true
 
 NavfnROS:
   allow_unknown: false # Specifies whether or not to allow navfn to create plans that traverse unknown space.
-  default_tolerance: 0.1 # A tolerance on the goal point for the planner.
+  default_tolerance: 0.44 # A tolerance on the goal point for the planner.
 
 DWAPlannerROS:
   # Robot configuration parameters  
@@ -11,13 +11,13 @@ DWAPlannerROS:
   acc_lim_y: 0
   acc_lim_th: 0.2
 
-  max_vel_x: 50.0
-  min_vel_x: 30.0
+  max_vel_x: 5.0
+  min_vel_x: 3.0
   max_vel_y: 0
   min_vel_y: 0
 
-  max_trans_vel: 50.0
-  min_trans_vel: 30.0
+  max_trans_vel: 5.0
+  min_trans_vel: 3.0
   max_rot_vel: 0.3
   min_rot_vel: 0.0
 
@@ -29,22 +29,22 @@ DWAPlannerROS:
   # Forward Simulation Parameters
   sim_time: 2.0
   sim_granularity: 0.02
-  vx_samples: 2000
+  vx_samples: 20
   vy_samples: 0
-  vtheta_samples: 2000
+  vtheta_samples: 20
   penalize_negative_x: false
 
   # Trajectory scoring parameters
-  path_distance_bias: 0.0099 # The weighting for how much the controller should stay close to the path it was given
-  goal_distance_bias: 0.0099 # The weighting for how much the controller should attempt to reach its local goal, also controls speed
-  occdist_scale: 0.1 # The weighting for how much the controller should attempt to avoid obstacles
+  path_distance_bias: 0.99 # The weighting for how much the controller should stay close to the path it was given
+  goal_distance_bias: 0.99 # The weighting for how much the controller should attempt to reach its local goal, also controls speed
+  occdist_scale: 0.9 # The weighting for how much the controller should attempt to avoid obstacles
   forward_point_distance: 0.455 # The distance from the center point of the robot to place an additional scoring point, in meters
   stop_time_buffer: 0.2  # The amount of time that the robot must stThe absolute value of the veolicty at which to start scaling the robot's footprint, in m/sop before a collision in order for a trajectory to be considered valid in seconds
   scaling_speed: 0.5 # The absolute value of the veolicty at which to start scaling the robot's footprint, in m/s
   max_scaling_factor: 0.2 # The maximum factor to scale the robot's footprint by
 
   # Oscillation Prevention Parameters
-  oscillation_reset_dist: 0.15 #How far the robot must travel in meters before oscillation flags are reset (double, default: 0.05)
+  oscillation_reset_dist: 0.005 #How far the robot must travel in meters before oscillation flags are reset (double, default: 0.05)
 # TrajectoryPlannerROS:
 #   # Robot Configuration Parameters
 #   acc_lim_x: 2.5
