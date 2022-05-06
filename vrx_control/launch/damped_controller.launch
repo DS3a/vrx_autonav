@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find vrx_control)/launch/pid_controllers.launch" />
+
+    <node pkg="vrx_control" name="run_control" type="run_control.sh"/>
+</launch>

@@ -2,11 +2,11 @@
     <include file="$(find wave_gazebo)/launch/ocean_world_buoys.launch" />
     <include file="$(find wamv_gazebo)/launch/rviz_vrx.launch" />
     
-    
+    <include file="$(find vrx_control)/launch/damped_controller.launch"/>    
+<!--
     <arg name="max_angle" default="$(eval pi/2)"/>
     <arg name="thrust_config" default="H"/>
     <arg name="namespace" default="wamv"/>
-<!--
     <group if="$(eval (arg('thrust_config') == 'H' or arg('thrust_config') == 'T') )">
         <node pkg="vrx_gazebo" type="key2thrust_angle.py" name="key2thrust_angle" output="screen">
         <param name="max_angle" value="$(arg max_angle)"/>
