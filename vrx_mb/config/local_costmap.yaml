@@ -19,10 +19,11 @@ resolution: 0.05
 
 obstacles_laser:
     observation_sources: laser
+    inflation_radius: 0.5
     laser: {data_type: PointCloud2, clearing: true, marking: true, topic: /wamv/sensors/lidars/lidar_wamv/points}
 
 inflation_layer:
-    inflation_radius: 0.5
+    inflation_radius: 4.5
     cost_scaling_factor: 2
 
 plugins:
