@@ -1,4 +1,4 @@
-## Welcome to the vrx project
+# Welcome to the vrx task
 
 Problem Statement
 
@@ -29,7 +29,7 @@ The obstacle avoidance with the help of movebase can be found here: https://driv
 The lawn mover trajectory following without obstacles can be found here: https://drive.google.com/file/d/1BhBBEkl2RxrfcNAThcOiydU5ELrSKpy7/view?usp=sharing
 
 The lawn mover trajectory following with obstacles can be found in these videos:
-https://drive.google.com/file/d/1au-6pKYp6INkZHwNyPMBTwCpxChOsKAz/view?usp=sharing
+https://drive.google.com/file/d/1au-6pKYp6INkZHwNyPMBTwCpxChOsKAz/view?usp=sharing <br>
 https://drive.google.com/file/d/1i_3ZMv6Mb-NM1FmNkvXbNzS2zwQ5007m/view?usp=sharing
 
 ### NOTE: Watch them at atleast 3x speed
