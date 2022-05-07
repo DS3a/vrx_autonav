@@ -1,6 +1,6 @@
 <launch>
     <include file="$(find wave_gazebo)/launch/ocean_world_buoys.launch" >
-        <arg name="x" value="-8" />
+        <arg name="x" value="-6" />
         <arg name="y" value="20" />
     </include>
     <include file="$(find wamv_gazebo)/launch/rviz_vrx.launch" />
