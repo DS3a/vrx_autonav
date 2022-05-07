@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-LENGTH = 15
-INCREMENT = 2
+LENGTH = 16
+INCREMENT = 5
 
 import rospy
 import actionlib
