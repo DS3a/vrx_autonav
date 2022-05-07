@@ -1,5 +1,7 @@
 <launch>
-    <include file="$(find wave_gazebo)/launch/ocean_world_buoys.launch" />
+    <include file="$(find wave_gazebo)/launch/ocean_world_buoys.launch" >
+        <arg name="x" value="-20" />
+    </include>
     <include file="$(find wamv_gazebo)/launch/rviz_vrx.launch" />
     
     <include file="$(find vrx_control)/launch/damped_controller.launch"/>    

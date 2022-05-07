@@ -6,7 +6,7 @@ use std::sync::Arc;
 
 const RATE: f64 = 100.0; // 100 pings per second
 const SETPOINT_DEGRADATION: f64 = 0.0057;
-const PROPELLER_SEPARATION: f64 = 0.2; // in meters
+const PROPELLER_SEPARATION: f64 = 1.2; // in meters
 
 rosrust::rosmsg_include!(std_msgs/Float64, std_msgs/Float32, geometry_msgs/Twist, nav_msgs/Odometry);
 
