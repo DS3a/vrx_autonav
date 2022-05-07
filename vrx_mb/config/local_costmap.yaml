@@ -7,8 +7,8 @@ obstacle_range: 50.0
 raytrace_range: 40.0
 footprint: [[-3,-1],[-3,1],[3,1],[3,-1]]
 footprint_padding: 0.61
-width: 30
-height: 30
+width: 60
+height: 60
 origin_x: 0
 origin_y: 0
 track_unknown_space: false
