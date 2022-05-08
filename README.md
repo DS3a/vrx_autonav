@@ -1,4 +1,4 @@
-# Welcome to the vrx task
+# Welcome to the vrx task repository
 
 Problem Statement
 
