@@ -1,4 +1,4 @@
-# Welcome to the vrx task repository
+# Welcome to the vrx autonav repository
 
 Problem Statement
 
